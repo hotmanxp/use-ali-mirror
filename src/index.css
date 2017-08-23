@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 40px 0;
+  font-family: sans-serif;
+}
+
+.header-cmp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 40px;
+  background-color: #fcc;
+  text-align: center;
+
+}
+
+.footer-cmp {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  background-color: #fcc;
+}
