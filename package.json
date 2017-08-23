@@ -43,11 +43,22 @@
     "webpack-manifest-plugin": "1.2.1",
     "whatwg-fetch": "2.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "npm-run-all": "^4.0.2",
+    "pm2": "^2.6.1"
+  },
   "scripts": {
+    "dev": "run-p start server:start",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "server:start": "pm2 start ./simulator/index --name=api-server",
+    "server:stop": "pm2 stop api-server || exit 0",
+    "test": "node scripts/test.js --env=jsdom",
+    "pm2log": "pm2 log"
   },
   "jest": {
     "collectCoverageFrom": [

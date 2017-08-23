@@ -1,0 +1,47 @@
+@pink: #fcc;
+
+.home-page {
+  color: blue;
+  text-align: center;
+  line-height: 100px;
+  font-weight: bold;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  color: gray;
+  font-weight: bold;
+  text-decoration: none;
+
+  &.active {
+    background-color: darken(@pink, 15%);
+    color: white;
+  }
+}
+
+.list-page {
+  .add-part {
+    padding: 10px;
+    input {
+      border: 1px gray solid;
+      line-height: 30px;
+      display: inline-block;
+      width: 180px;
+      border-radius: 3px;
+    }
+  }
+}
+
+button {
+  margin: 0 10px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  width: 120px;
+  font-size: 16px;
+  background-color: darken(#fcc, 30%);
+  color: white;
+  border-radius: 3px;
+  border: none;
+}

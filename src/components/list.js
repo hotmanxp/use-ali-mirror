@@ -4,7 +4,7 @@ import { actions } from 'mirrorx'
 const List = ({list = []}) => {
   return <div>
     {list.map((item, idx) => <li key={idx}>
-      {item.text}
+      {`${idx} ${item.text}`}
       <button onClick={() => {
         actions.todos.delete(idx)
       }}>Delete</button>
