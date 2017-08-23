@@ -45,7 +45,10 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "body-parser": "^1.17.2",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "npm-run-all": "^4.0.2",
@@ -55,8 +58,9 @@
     "dev": "run-p start server:start",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "server:start": "pm2 start ./simulator/index --name=api-server",
+    "server:start": "pm2 start ./simulator --name=api-server",
     "server:stop": "pm2 stop api-server || exit 0",
+    "server:restart": "run-s server:stop server:start",
     "test": "node scripts/test.js --env=jsdom",
     "pm2log": "pm2 log"
   },
@@ -93,9 +97,19 @@
       "node"
     ]
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3003/"
+    }
+  },
   "babel": {
     "presets": [
-      "react-app"
+      "es2015",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-runtime"
     ]
   },
   "eslintConfig": {
